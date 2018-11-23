@@ -1,0 +1,87 @@
+@import "reset";
+#wrap{
+  height: 100%;
+  position: relative;
+  #header{
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: purple;
+    .header-main{
+      height: 100%;
+      width: 1100px;
+      margin: 0 auto;
+      .logo{
+        margin-top:15px;
+        float: left;
+      }
+      .nav{
+        margin-top:50px;
+        float: right;
+        li{
+          float: left;
+          margin-left:40px;
+          position: relative;
+          color: #009EE0;
+          &:hover{
+            .down{
+              width: 100%;
+            }
+          }
+          &.active{
+            .down{
+              width: 100%;
+            }
+          }
+          .down{
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 0px;
+            overflow: hidden;
+            transition: width 1s;
+            color: #000;
+          }
+
+        }
+      }
+      .arrow{
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        height: 11px;
+        width: 21px;
+        background-image: url("../images/arrow.png");
+        background-repeat: no-repeat;
+        transition: left 1s;
+        z-index: 5;
+      }
+    }
+  }
+  #content{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: deeppink;
+    .list{
+      height: 500%;
+      li{
+        position: relative;
+        height: 20%;
+        background-color: blueviolet;
+        section{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: 520px;
+          width: 1100px;
+          transform: translate(-50%,-50%);
+          background-color: darkred;
+
+        }
+      }
+    }
+  }
+}

@@ -78,7 +78,7 @@ module.exports = {
   devServer: {
     contentBase: './build',
     hot: true, //开启热模替换功能
-    port: 3000,
+    port: 4000,
     open: true  //自动打开浏览器
   },
 }

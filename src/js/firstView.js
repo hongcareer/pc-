@@ -1,6 +1,6 @@
 export default function(){
-  const point = document.querySelectorAll('.home-nav li');
-  const slide = document.querySelectorAll('.home-slide li');
+  const point = document.querySelectorAll('.home .home-nav li');
+  const slide = document.querySelectorAll('.home .home-slide li');
   const home = document.querySelector('.home');
   let lastIndex = 0;
   let nowIndex = 0;
@@ -15,11 +15,11 @@ export default function(){
       if(lastIndex === nowIndex) return;
       clearInterval(timer);
       if(nowIndex>lastIndex){
-        slide[nowIndex].className = 'public rightShow';
-        slide[lastIndex].className = 'public leftHide';
+        slide[nowIndex].className = 'common-title rightShow';
+        slide[lastIndex].className = 'common-title leftHide';
       }else{
-        slide[nowIndex].className = 'public leftShow';
-        slide[lastIndex].className = 'public rightHide';
+        slide[nowIndex].className = 'common-title leftShow';
+        slide[lastIndex].className = 'common-title rightHide';
       };
       point[nowIndex].className = 'active';
       point[lastIndex].className = '';
@@ -34,8 +34,8 @@ export default function(){
       if(nowIndex === 4){
         nowIndex = 0;
       }
-      slide[nowIndex].className = 'public rightShow';
-      slide[lastIndex].className = 'public leftHide';
+      slide[nowIndex].className = 'common-title rightShow';
+      slide[lastIndex].className = 'common-title leftHide';
       point[nowIndex].className = 'active';
       point[lastIndex].className = '';
       lastIndex = nowIndex;

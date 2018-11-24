@@ -60,6 +60,7 @@ export default function () {
     },200);
   };
 //箭头，导航，页面的同步移动
+  move(3)
   function move(nowIndex) {
     ulList.style.top = -nowIndex*content.offsetHeight+'px';
     for (var j = 0; j < liNodes.length; j++) {

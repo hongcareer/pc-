@@ -1,4 +1,8 @@
 @import "reset";
+.public{
+  color:#009ee0; font-size:80px; line-height:0.8;
+  font-weight:bold; letter-spacing:-5px;
+}
 #wrap{
   height: 100%;
   position: relative;
@@ -84,7 +88,7 @@
       li{
         position: relative;
         height: 20%;
-        background-color: blueviolet;
+        //background-color: blueviolet;
         section{
           position: absolute;
           top: 50%;
@@ -93,7 +97,72 @@
           width: 1100px;
           transform: translate(-50%,-50%);
           background-color: darkred;
-
+          .home-slide{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            li{
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              text-align: center;
+              line-height: 520px;
+              visibility: hidden;
+              &.show{
+                visibility: visible;
+              }
+              &.leftHide{
+                visibility: hidden;
+                animation: leftHide 2s linear;
+              }
+              &.rightHide{
+                visibility: hidden;
+                animation: rightHide 2s linear;
+              }
+              &.leftShow{
+                visibility: visible;
+                animation: leftShow 2s linear;
+              }
+              &.rightShow{
+                visibility: visible;
+                animation: rightShow 2s linear;
+              }
+              &:nth-child(1){
+                background-color: purple;
+              }
+              &:nth-child(2){
+                background-color: springgreen;
+              }
+              &:nth-child(3){
+                background-color: teal;
+              }
+              &:nth-child(4){
+                background-color: tomato;
+              }
+            }
+          }
+          .home-nav{
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            li{
+              float: left;
+              height:20px;
+              width: 20px;
+              background-color: rgba(255,255,255,0.5);
+              margin: 2px;
+              box-shadow:0 0 4px rgba(25,25,25,0.8);
+              border-radius: 50%;
+              &.active{
+                background-color: white;
+              }
+            }
+          }
         }
       }
     }
@@ -117,4 +186,24 @@
       }
     }
   }
+}
+@keyframes leftShow {
+  0%{visibility: hidden;transform: translateZ(-200px)}
+  50%{transform: translateX(-40%) rotateY(30deg) scale(.8);}
+  100%{visibility: visible;transform: translateZ(0)}
+}
+@keyframes rightHide {
+  0%{visibility: visible;transform: translateZ(0)}
+  50%{transform: translateX(40%) rotateY(-30deg) scale(.8);}
+  100%{visibility: hidden;transform: translateZ(-200px)}
+}
+@keyframes rightShow {
+  0%{visibility: hidden;transform: translateZ(-200px)}
+  50%{transform: translateX(40%) rotateY(-30deg) scale(.8);}
+  100%{visibility: visible;transform: translateZ(0)}
+}
+@keyframes leftHide {
+  0%{visibility: visible;transform: translateZ(0)}
+  50%{transform: translateX(-40%) rotateY(30deg) scale(.8);}
+  100%{visibility: hidden;transform: translateZ(-200px)}
 }

@@ -1,6 +1,6 @@
 @import "reset";
 .common-title{
-  color:#009ee0; font-size:80px; line-height:0.8;
+  color:#009ee0; font-size:60px; line-height:0.8;
   font-weight:bold; letter-spacing:-5px;
 }
 .commonText{ color:white; line-height:1.5; font-size:15px;}
@@ -11,15 +11,21 @@
     position: relative;
     height: 80px;
     width: 100%;
-    background-color: firebrick;
+    //background-color: firebrick;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
     .header-main{
       height: 100%;
       width: 1100px;
       margin: 0 auto;
-      background-color: darkred;
+      //background-color: #F999A4;
       .logo{
         margin-top:15px;
+        height: 100px;
         float: left;
+        img{
+          margin-top:-10px;
+        }
       }
       .nav{
         margin-top:50px;
@@ -57,7 +63,7 @@
         left: 0px;
         height: 11px;
         width: 21px;
-        background-image: url("../images/arrow.png");
+        background-image: url("../images/arrow.jpg");
         background-repeat: no-repeat;
         transition: left 1s;
         z-index: 5;
@@ -91,6 +97,7 @@
         position: relative;
         height: 20%;
         background-image: url("../images/a12.jpg");
+        overflow: hidden;
         section{
           position: absolute;
           top: 50%;
@@ -105,6 +112,7 @@
               width: 100%;
               transform-style: preserve-3d;
               perspective: 1000px;
+              transition: transform 1s,opacity 1s;
               li{
                 position: absolute;
                 top: 0;
@@ -137,6 +145,7 @@
                   background-image: url('../images/m1.jpg');
                 }
                 &:nth-child(2){
+                  color:darkred;
                   background-image: url('../images/m2.jpg');
                 }
                 &:nth-child(3){
@@ -144,6 +153,7 @@
                 }
                 &:nth-child(4){
                   background-image: url('../images/m4.jpg');
+
                 }
               }
             }
@@ -177,15 +187,26 @@
             }
             .course-pic{
               position: absolute;
-              top: 70px;
+              top: 120px;
               right: 50px;
               width: 480px;
               li{
                 position: relative;
                 float: left;
-                width: 120px;
-                height: 132px;
+                width: 105px;
+                height: 105px;
                 box-sizing: border-box;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 1px solid palevioletred;
+                margin-left: 5px;
+                margin-bottom: 5px;
+                img{
+                  position: absolute;
+                  top: -8px;
+                  left: -8px;
+                  border-radius: 50%;
+                }
                 //padding: 15px;
                 &:hover{
                   .front{
@@ -208,6 +229,7 @@
                   left: 0;
                   transform: rotateY(180deg);
                   backface-visibility: hidden;
+                  line-height: 105px;
                 }
               }
 
@@ -236,6 +258,36 @@
                   right: 50px;
                 }
               }
+            }
+            .course-plane1{
+              width:359px;
+              height:283px;
+              background:url(../images/plane1.png) no-repeat;
+              position:absolute;
+              left:300px;
+              top:-100px;
+              transition:1s;
+              z-index: -1;
+            }
+            .course-plane2{
+              width:309px;
+              height:249px;
+              background:url(../images/plane2.png) no-repeat;
+              position:absolute;
+              left:-100px;
+              top:200px;
+              transition:1s;
+              z-index: -1;
+            }
+            .course-plane3{
+              width:230px;
+              height:182px;
+              background:url(../images/plane3.png) no-repeat;
+              position:absolute;
+              left:300px;
+              top:400px;
+              transition:1s;
+              z-index: -1;
             }
           }
           &.works{
@@ -306,10 +358,40 @@
               height: 191px;
               position: absolute;
               left: 900px;
-              top: 170px;
+              top: 122px;
 
               background-image: url('../images/robot.png');
               animation:robot 5s linear infinite;
+            }
+            .works-pencil1{
+              width:180px;
+              height:97px;
+              background:url(../images/pencel1.png) no-repeat;
+              position:absolute;
+              transition:1s;
+              left:500px;
+              top:0;
+              z-index: -1;
+            }
+            .works-pencil2{
+              width:268px;
+              height:38px;
+              background:url(../images/pencel2.png) no-repeat;
+              position:absolute;
+              transition:1s;
+              left:300px;
+              top:250px;
+              z-index: -1;
+            }
+            .works-pencil3{
+              width:441px;
+              height:231px;
+              background:url(../images/pencel3.png) no-repeat;
+              position:absolute;
+              transition:1s;
+              left:650px;
+              top:300px;
+              z-index: -1;
             }
           }
           &.about{
@@ -326,6 +408,7 @@
               height: 200px;
               border: 5px rgba(255,255,255,0.5) solid;
               border-radius:8px;
+              transition: transform 1s;
               li{
                 height: 50%;
                 width: 50%;
@@ -336,24 +419,24 @@
                 position: absolute;
                 left: 750px;
                 top: 50px;
-                background-image: url('../images/about2.jpg');
+                background-image: url('../images/t4.jpg');
                 li{
                   &:nth-child(1){
-                    background-image:url('../images/about1.jpg');
+                    background-image:url('../images/t1.png');
                     background-repeat: no-repeat;
                   }
                   &:nth-child(2){
-                    background-image:url('../images/about1.jpg');
+                    background-image:url('../images/t1.png');
                     background-repeat: no-repeat;
                     background-position: 100% 0;
                   }
                   &:nth-child(3){
-                    background-image:url('../images/about1.jpg');
+                    background-image:url('../images/t1.png');
                     background-repeat: no-repeat;
                     background-position:0 100% ;
                   }
                   &:nth-child(4){
-                    background-image:url('../images/about1.jpg');
+                    background-image:url('../images/t1.png');
                     background-repeat: no-repeat;
                     background-position: 100% 100%;
                   }
@@ -363,24 +446,24 @@
                 position: absolute;
                 left: 600px;
                 top: 290px;
-                background-image: url('../images/about4.jpg');
+                background-image: url('../images/t2.png');
                 li{
                   &:nth-child(1){
-                    background-image:url('../images/about3.jpg');
+                    background-image:url('../images/t3.jpg');
                     background-repeat: no-repeat;
                   }
                   &:nth-child(2){
-                    background-image:url('../images/about3.jpg');
+                    background-image:url('../images/t3.jpg');
                     background-repeat: no-repeat;
                     background-position: 100% 0;
                   }
                   &:nth-child(3){
-                    background-image:url('../images/about3.jpg');
+                    background-image:url('../images/t3.jpg');
                     background-repeat: no-repeat;
                     background-position:0 100% ;
                   }
                   &:nth-child(4){
-                    background-image:url('../images/about3.jpg');
+                    background-image:url('../images/t3.jpg');
                     background-repeat: no-repeat;
                     background-position: 100% 100%;
                   }
@@ -410,11 +493,13 @@
               float: left;
               margin: 50px;
               width: 400px;
+              transition: transform 1s;
             }
             .team-text{
               float: right;
               margin: 50px;
               width: 400px;
+              transition: transform 1s;
             }
             .team-pic{
               position: absolute;
@@ -424,21 +509,22 @@
               left: 50%;
               transform: translateX(-50%);
               li{
-                height: 100%;
-                width: 236px;
+                height: 90%;
+                width: 220px;
                 float: left;
-                background-image: url('../images/team.png');
+                margin-left: 5px;
+                overflow: hidden;
                 &:nth-child(1){
-                  background-position: 3px 0px;
+                  background-image: url('../images/b1.jpg');
                 }
                 &:nth-child(2){
-                  background-position: -230px 0px;
+                  background-image: url('../images/b2.jpg');
                 }
                 &:nth-child(3){
-                  background-position: -483px 0px;
+                  background-image: url('../images/b3.jpg');;
                 }
                 &:nth-child(4){
-                  background-position: -710px 0px;
+                  background-image: url('../images/b4.jpg');
                 }
               }
             }
@@ -464,6 +550,42 @@
           background-color: darkred;
         }
       }
+    }
+  }
+  #boot-animation{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    .line{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 4px;
+      //width: 0px;
+      background-color: wheat;
+    }
+    .up{
+      height: 50%;
+      width: 100%;
+      background-color: darkred;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: height 1s;
+    }
+    .down{
+      height: 50%;
+      width: 100%;
+      background-color: indianred;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: height 1s;
+
     }
   }
 }

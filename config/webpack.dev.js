@@ -21,7 +21,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|mp3)$/,
         use: [
           {
             loader: 'url-loader',
@@ -29,7 +29,7 @@ module.exports = {
               limit: 8192,
               publicPath:'../images',
               outputPath:'./images',
-              name: '[hash:10].[ext]'
+              name: '[name].[ext]'
             }
           }
         ]
